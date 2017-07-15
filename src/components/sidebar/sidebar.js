@@ -1,10 +1,12 @@
 import React from 'react';
 
-import Glyph from './lib/glyph';
+import Glyph from '../lib/glyph';
+
+require('./sidebar.scss');
 
 export default () => {
     return (
-        <div className='navbar'>
+        <div className='sidebar'>
             <ul className='list-group'>
                 <li>
                     <button>

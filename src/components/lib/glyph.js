@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Glyph({ icon, xs, sm, md, lg }) {
+export default function Glyph({ icon, xs, sm, md, lg, color }) {
     const size =
         (xs ? 0.5 :
             sm ? 1 :
@@ -8,12 +8,12 @@ export default function Glyph({ icon, xs, sm, md, lg }) {
                     lg ? 2 :
                         '');
 
-    const fontSize = 
+    const fontSize =
         size ? `${size}em` : `${1}em`;
 
     return (
         <span
             className={`glyphicon glyphicon-${icon}`}
-            style={{ fontSize }} />
+            style={{ fontSize, color }} />
     )
 }
