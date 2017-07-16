@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Row from '../../../../lib/row';
 import Col from '../../../../lib/col';
 
 require('./style.scss');
 
-export default class SectionItem
-    extends Component {
+class SectionItem extends Component {
+
     constructor(props) {
         super(props);
 
@@ -18,7 +19,7 @@ export default class SectionItem
     }
 
     handleClickEvent(event) {
-        var pos = event.target.getBoundingClientRect();
+        var pos = this.props.mousePos;
 
         this.setState({
             position: {
@@ -26,8 +27,6 @@ export default class SectionItem
                 left: pos.left
             }
         })
-
-        console.log(event.target.getBoundingClientRect());
     }
 
     render() {
@@ -39,8 +38,8 @@ export default class SectionItem
                 {
                     this.state.position ? {
                         position: "fixed",
-                        top: this.state.position.top,
-                        left: this.state.position.left,
+                        top: this.props.mousePos.top,
+                        left: this.props.mousePos.left,
                         zIndex: 100
                     } : null
                 }>
@@ -60,3 +59,11 @@ export default class SectionItem
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        mousePos: state.mousePos
+    };
+}
+
+export default connect(mapStateToProps)(SectionItem);

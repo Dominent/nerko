@@ -9,6 +9,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    devtool: isProd ? null : 'source-map',
     module: {
         rules: [
             { test: /\.css$/, use: ['style-loader', 'css-loader'] },

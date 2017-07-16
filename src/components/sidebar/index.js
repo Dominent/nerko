@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Glyph from '../../../lib/glyph';
-
-require('./style.scss');
+import Glyph from '../lib/glyph';
 
 export default () => {
     return (

@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { updateMousePos } from '../../../redux/actions/board/updateMousePos'
 
 import Row from '../../lib/row';
 import Col from '../../lib/col';
 
-import Sidebar from './sidebar';
 import Section from './section';
 import SectionItem from './section/section-item'
 
-export default class Board
-    extends Component {
-    constructor(props) {
-        super(props);
-
-        this.handleMouseMoveEvent = this.handleMouseMoveEvent.bind(this);
-    }
-
-    handleMouseMoveEvent(event) {
-        // console.log(event);
-    }
-
+class Board extends Component {
     render() {
         return (
-            <div className='board'
-                onMouseMove={this.handleMouseMoveEvent}>
+            <div 
+                className='board'
+                onMouseMove={(event) => this.props.updateMousePos(event)}
+            >
                 <Row>
                     <Col>
-                        <Col md='2'>
-                            <Sidebar />
-                        </Col>
-                        <Col md='9'>
-                            <Col md='3' >
+                        <Col md='12'>
+                            <Col md='4' >
                                 <Section name='ToDo' items={[
                                     <SectionItem >
                                         As a user I want to have a personal
@@ -48,7 +39,7 @@ export default class Board
                             </SectionItem>
                                 ]} />
                             </Col>
-                            <Col md='3' >
+                            <Col md='4' >
                                 <Section name='Doing' items={[
                                     <SectionItem >
                                         As a user I want to have a personal
@@ -67,7 +58,7 @@ export default class Board
                             </SectionItem>
                                 ]} />
                             </Col>
-                            <Col md='3'>
+                            <Col md='4'>
                                 <Section name='Done' items={[
                                     <SectionItem >
                                         As a user I want to have a personal
@@ -93,3 +84,11 @@ export default class Board
         )
     }
 }
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({
+        updateMousePos: updateMousePos
+    }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Board);
