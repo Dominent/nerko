@@ -12,14 +12,14 @@ export default () => {
         <div className='board'>
             <Row>
                 <Col>
-                    <Col md='1'>
+                    <Col md='2'>
                         <Sidebar />
                     </Col>
-                    <Col md='11'>
+                    <Col md='9'>
                         <Col md='3' >
                             <Section name='ToDo' items={[
                                 <SectionItem >
-                                    As a user I want to have a personal
+                                As a user I want to have a personal
                                 account so than nobody but me will
                                 be able to buy from it.
                             </SectionItem>,
