@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('./section-item.scss');
+require('./style.scss');
 
 export default ({ children }) => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('./overlay.scss');
+require('./style.scss');
 
 export default function Overlay({ children }) {
     return (

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Glyph from '../lib/glyph';
+import Glyph from '../../../lib/glyph';
 
-require('./sidebar.scss');
+require('./style.scss');
 
 export default () => {
     return (

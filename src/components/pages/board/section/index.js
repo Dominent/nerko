@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 
-import Glyph from '../lib/glyph';
-import Overlay from '../lib/overlay/overlay';
+import Glyph from '../../../lib/glyph';
+import Overlay from '../../../lib/overlay';
 
-require('./section.scss');
+require('./style.scss');
 
 export default class Section
     extends Component {
