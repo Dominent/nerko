@@ -1,0 +1,55 @@
+.editor {
+    border-left: 1px solid #d9d9d9;
+    position: absolute;
+    margin-left: 5%;
+}
+
+.editor-reset {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-size: 20px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    border: none;
+    border-radius: 0;
+}
+
+.editor-content {
+    color:#000;
+    -webkit-text-fill-color:transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    overflow-y:hidden;
+    resize: none;
+}
+
+.json-key {
+    color: #2b91af;
+}
+
+.json-string {
+    color: #a31515;
+}
+
+.json-object {
+    color: #d1a075;
+}
+
+.json-keywords {
+    color: #0000ff;
+}
+
+.json-array {
+    color: #31CBFF;
+}
+
+.json-number {
+    color: #0451ad;
+}

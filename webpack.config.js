@@ -21,6 +21,7 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, 'dist')
     },
+    devtool: 'source-map',
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
